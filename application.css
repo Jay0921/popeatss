@@ -1,0 +1,57 @@
+.fall-animation {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.fall-element {
+  position: absolute;
+  display: inline-block;
+  top: -30px;
+  pointer-events: none;
+}
+
+.fall-animation-1 {
+  animation: fallDown1 15s infinite;
+}
+
+.fall-animation-2 {
+  animation: fallDown2 15s infinite;
+}
+
+.fall-element img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes fallDown1 {
+  0% {
+    transform: rotate(-30deg);
+    top: -30px;
+  }
+  50% {
+    transform: rotate(30deg);
+    top: 100%;
+  }
+  100% {
+    transform: rotate(-30deg);
+    top: 100%;
+  }
+}
+
+@keyframes fallDown2 {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+    top: 100%;
+  }
+  100% {
+    transform: rotate(30deg);
+    top: 100%;
+  }
+}

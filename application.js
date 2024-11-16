@@ -7,9 +7,10 @@
     let html = '';
 
     for (var i = 0; i < amount; i++) {
-      let imageSrc = imageSources[getRandomNumbersBetweenRange(0, imageSources.length)];
+      let index = getRandomNumbersBetweenRange(0, imageSources.length);
+      let imageSrc = imageSources[index];
       let verticalPosition = `${Math.random() * 101}%`;
-      let width = `${getRandomNumbersBetweenRange(50, 80)}px`;
+      let width = index == 0 ? `${getRandomNumbersBetweenRange(50, 80)}px` : `${getRandomNumbersBetweenRange(30, 50)}px`
       let animationClass = `fall-animation-${getRandomNumbersBetweenRange(1, 3)}`
       html += `<div class="fall-element ${animationClass}" style="left: ${verticalPosition}; width: ${width};"><img src="${imageSrc}"/></div>`;
     }

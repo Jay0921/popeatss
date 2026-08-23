@@ -56,7 +56,13 @@
 
 
 /* Override */
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 950px) {
+  .banner {
+    min-height: 95rem !important;
+  }
+}
+
+@media screen and (min-width: 1250px) {
   .banner {
     min-height: 135rem !important;
   }

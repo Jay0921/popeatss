@@ -56,6 +56,8 @@
 
 
 /* Override */
-.banner__media-image-half {
-  object-fit: fill !important;
+@media screen and (min-width: 750px) {
+  .banner {
+    min-height: 135rem !important;
+  }
 }

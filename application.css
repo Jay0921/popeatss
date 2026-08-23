@@ -15,11 +15,11 @@
 }
 
 .fall-animation-1 {
-  animation: fallDown1 15s infinite;
+  animation: fallDown1 12s infinite;
 }
 
 .fall-animation-2 {
-  animation: fallDown2 15s infinite;
+  animation: fallDown2 12s infinite;
 }
 
 .fall-element img {

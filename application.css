@@ -53,3 +53,9 @@
     top: 120%;
   }
 }
+
+
+/* Override */
+.banner__media-image-half {
+  object-fit: fill !important;
+}

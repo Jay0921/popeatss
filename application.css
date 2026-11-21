@@ -9,35 +9,27 @@
 
 .fall-element {
   position: absolute;
-  display: inline-block;
   top: -60px;
   pointer-events: none;
   will-change: transform;
-}
-
-.fall-animation-1 {
-  animation: fallDown1 6s linear 1 forwards;
-}
-
-.fall-animation-2 {
-  animation: fallDown2 6s linear 1 forwards;
+  animation: fallDown linear 1 forwards;
 }
 
 .fall-element img {
+  display: block;
   width: 100%;
   height: auto;
+  animation: sway ease-in-out infinite alternate;
 }
 
-@keyframes fallDown1 {
-  0%   { transform: translateY(0) rotate(-20deg); }
-  50%  { transform: translateY(calc(50vh + 40px)) rotate(20deg); }
-  100% { transform: translateY(calc(100vh + 80px)) rotate(-20deg); }
+@keyframes fallDown {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(100vh + 80px)); }
 }
 
-@keyframes fallDown2 {
-  0%   { transform: translateY(0) rotate(20deg); }
-  50%  { transform: translateY(calc(50vh + 40px)) rotate(-20deg); }
-  100% { transform: translateY(calc(100vh + 80px)) rotate(20deg); }
+@keyframes sway {
+  from { transform: translateX(-8px) rotate(-20deg); }
+  to   { transform: translateX(8px) rotate(20deg); }
 }
 
 

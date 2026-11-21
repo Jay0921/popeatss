@@ -6,6 +6,8 @@
   const MAX_WIDTH = 42;            // px
   const MIN_DURATION = 5;          // seconds to fall the full screen
   const MAX_DURATION = 7;
+  const MIN_SWAY = 1.5;            // seconds per side-to-side swing
+  const MAX_SWAY = 2.5;
 
   function randomBetween(min, max) {
     return Math.random() * (max - min) + min;
@@ -19,10 +21,13 @@
     const left = randomBetween(0, 95).toFixed(1);
     const width = Math.round(randomBetween(MIN_WIDTH, MAX_WIDTH));
     const duration = randomBetween(MIN_DURATION, MAX_DURATION).toFixed(2);
-    const animationClass = Math.random() < 0.5 ? 'fall-animation-1' : 'fall-animation-2';
+    const sway = randomBetween(MIN_SWAY, MAX_SWAY).toFixed(2);
+    const swayPhase = randomBetween(0, sway * 2).toFixed(2);
 
     const $el = $(
-      `<div class="fall-element ${animationClass}" style="left: ${left}%; width: ${width}px; animation-duration: ${duration}s;"><img src="${imageSrc}" alt=""/></div>`
+      `<div class="fall-element" style="left: ${left}%; width: ${width}px; animation-duration: ${duration}s;">` +
+        `<img src="${imageSrc}" alt="" style="animation-duration: ${sway}s; animation-delay: -${swayPhase}s;"/>` +
+      `</div>`
     );
     $container.append($el);
     setTimeout(function () { $el.remove(); }, duration * 1000 + 200);
